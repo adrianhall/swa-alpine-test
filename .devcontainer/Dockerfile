@@ -5,7 +5,7 @@ ARG USERNAME=vscode
 RUN apk add -q --update --progress --no-cache \
     git sudo openssh-client bash \
     py3-pip gcc musl-dev python3-dev libffi-dev openssl-dev cargo make \
- && pip install --break-system-packages azure-cli
+ && pip install --break-system-packages azure-cli libsecret
 
 RUN addgroup $USERNAME \
  && adduser -G $USERNAME $USERNAME -D \

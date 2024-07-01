@@ -3,9 +3,9 @@ FROM node:20-alpine3.19
 ARG USERNAME=vscode
 
 RUN apk add -q --update --progress --no-cache \
-    git sudo openssh-client bash \
+    git sudo openssh-client bash libsecret \
     py3-pip gcc musl-dev python3-dev libffi-dev openssl-dev cargo make \
- && pip install --break-system-packages azure-cli libsecret
+ && pip install --break-system-packages azure-cli
 
 RUN addgroup $USERNAME \
  && adduser -G $USERNAME $USERNAME -D \
